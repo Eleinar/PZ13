@@ -33,8 +33,8 @@ class Squeack (QuackBehavior):
 class Duck (ABC):
 
     def __init__(self):
-        self.qb = QuackBehavior()
-        self.fb = FlyBehavior()
+        self._qb = QuackBehavior()
+        self._fb = FlyBehavior()
         
 
     @abstractmethod
@@ -42,16 +42,16 @@ class Duck (ABC):
         pass
 
     def perfomFly(self):
-        self.fb.fly()
+        self._fb.fly()
     
     def perfomQuack(self):
-        self.qb.quack()
+        self._qb.quack()
 
 class MallardDuck (Duck):
     
     def __init__(self):
-        self.fb = FlyWithWings()
-        self.qb = Quack()
+        self._fb = FlyWithWings()
+        self._qb = Quack()
 
     def display(self):
         print('Im a real Mallard duck')
